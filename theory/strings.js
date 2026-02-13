@@ -30,5 +30,28 @@ function solution(string) {
 }
 console.log(solution(string))
 
+// calculate vowels
+function calculateVowels(str) {
+    let count = 0
+    let vowels  = ['a','e','u','i','o']
+    for(const char of str.toLowerCase()) {
+        if(vowels.includes(char)){
+            count++
+        }
+    }
+    return count
+}
+console.log(calculateVowels('kAika'))
 
+const calcVowels = (str) => {
+    let vowels  = ['a','e','u','i','o']
+    return str.toLowerCase().split('').reduce((acc, el) => vowels.includes(el) ? acc + 1 : acc, 0)
+}
+console.log(calcVowels('kuAika'))
 
+// reverse strings
+// 'welcome to the world of javascript'
+function reverse(str) {
+    return str.split(' ').map(el => el.split('').reverse().join(''))
+}
+console.log(reverse('welcome to the world of javascript'))
