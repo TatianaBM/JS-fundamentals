@@ -361,3 +361,16 @@ function deepCopy(value) {
     }
 }
 console.log(deepCopy(null))
+
+// ['a','a','b', 'g', 'b', 'j', 'a']
+// return most occurring string
+const mostOccuringString = arr => {
+    let obj = arr.reduce((acc, el) =>  {
+        acc[el] = acc[el] ? acc[el] + 1 : 1
+        return acc
+    }, {})
+    
+    //Math.max(...Object.values(obj))
+    return Object.entries(obj).reduce((acc, el) => el[1] > acc[1] ? el : acc, [null,0])
+}
+console.log(mostOccuringString(['a','a','b', 'g', 'b', 'j', 'a']))

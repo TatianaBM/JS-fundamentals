@@ -17,3 +17,13 @@ console.log(counter())  // 3
 
 console.log(anotherCounter())  // 0
 console.log(anotherCounter())  // 1
+
+// create a function that stores a secrete word inside which cant be changed or accessed from outside
+function secret() {
+    const secret = 'secrettttt'
+    return function(){
+        return secret
+    }
+}
+let a = secret()
+console.log(a())
